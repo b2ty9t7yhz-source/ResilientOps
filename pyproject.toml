@@ -7,7 +7,7 @@ name = "resilient-ops"
 version = "0.1.0"
 description = "Constraint-based maintenance scheduling and disruption repair"
 readme = "README.md"
-requires-python = ">=3.12,<3.14"
+requires-python = ">=3.12,<3.15"
 license = {text = "MIT"}
 authors = [{name = "ResilientOps Contributors"}]
 dependencies = [

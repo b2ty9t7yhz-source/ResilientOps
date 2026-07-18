@@ -1,6 +1,7 @@
 # ResilientOps
 
 [![CI](https://github.com/b2ty9t7yhz-source/ResilientOps/actions/workflows/ci.yml/badge.svg)](https://github.com/b2ty9t7yhz-source/ResilientOps/actions/workflows/ci.yml)
+[![Streamlit deployment](https://img.shields.io/badge/Streamlit-Live-success?logo=streamlit&logoColor=white)](https://resilientops-demo.streamlit.app/)
 ![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![OR-Tools](https://img.shields.io/badge/OR--Tools-CP--SAT-4285F4)
 ![FastAPI](https://img.shields.io/badge/FastAPI-API-009688?logo=fastapi&logoColor=white)
@@ -11,6 +12,10 @@ ResilientOps is a smart scheduling system that assigns tasks to limited workers 
 It is a complete Python portfolio project: typed JSON inputs, three greedy baselines, a Google OR-Tools CP-SAT optimizer, disruption-aware re-optimization, shared metrics, Plotly charts, a Streamlit dashboard, a FastAPI service, a CLI, tests, Docker, and CI.
 
 The dashboard also explains why tasks moved, became late, or were rejected; supports direct table editing; exports CSV and JSON; and marks event, outage, and soft frozen-horizon regions on repair charts.
+
+## Live demo
+
+Try the deployed dashboard at **[resilientops-demo.streamlit.app](https://resilientops-demo.streamlit.app/)**. The small example loads automatically, so you can generate an optimized schedule, simulate disruptions, and compare algorithms without any local setup.
 
 ## The business problem
 

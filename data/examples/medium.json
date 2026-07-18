@@ -1,0 +1,45 @@
+{
+  "name": "Medium maintenance schedule",
+  "horizon": 160,
+  "tasks": [
+    {"id":"T1","name":"Maintenance task 1","duration":3,"release_time":0,"deadline":18,"priority":4,"value":40,"required_skill":"electrical","required_machine_type":"lift","predecessor_ids":[],"mandatory":true},
+    {"id":"T2","name":"Maintenance task 2","duration":5,"release_time":0,"deadline":20,"priority":5,"value":75,"required_skill":"mechanical","required_machine_type":"diagnostic","predecessor_ids":[],"mandatory":true},
+    {"id":"T3","name":"Maintenance task 3","duration":4,"release_time":1,"deadline":22,"priority":2,"value":35,"required_skill":"inspection","required_machine_type":null,"predecessor_ids":[],"mandatory":true},
+    {"id":"T4","name":"Maintenance task 4","duration":6,"release_time":2,"deadline":26,"priority":3,"value":60,"required_skill":"electrical","required_machine_type":"diagnostic","predecessor_ids":[],"mandatory":true},
+    {"id":"T5","name":"Maintenance task 5","duration":3,"release_time":3,"deadline":25,"priority":4,"value":55,"required_skill":"mechanical","required_machine_type":"lift","predecessor_ids":["T4"],"mandatory":true},
+    {"id":"T6","name":"Maintenance task 6","duration":5,"release_time":4,"deadline":30,"priority":2,"value":30,"required_skill":"inspection","required_machine_type":null,"predecessor_ids":[],"mandatory":true},
+    {"id":"T7","name":"Maintenance task 7","duration":7,"release_time":5,"deadline":31,"priority":1,"value":20,"required_skill":"electrical","required_machine_type":"lift","predecessor_ids":[],"mandatory":false},
+    {"id":"T8","name":"Maintenance task 8","duration":4,"release_time":6,"deadline":32,"priority":5,"value":90,"required_skill":"mechanical","required_machine_type":"diagnostic","predecessor_ids":[],"mandatory":true},
+    {"id":"T9","name":"Maintenance task 9","duration":3,"release_time":7,"deadline":34,"priority":3,"value":45,"required_skill":"inspection","required_machine_type":null,"predecessor_ids":["T8"],"mandatory":true},
+    {"id":"T10","name":"Maintenance task 10","duration":6,"release_time":8,"deadline":38,"priority":4,"value":70,"required_skill":"electrical","required_machine_type":"diagnostic","predecessor_ids":[],"mandatory":true},
+    {"id":"T11","name":"Maintenance task 11","duration":4,"release_time":9,"deadline":36,"priority":2,"value":40,"required_skill":"mechanical","required_machine_type":"lift","predecessor_ids":[],"mandatory":true},
+    {"id":"T12","name":"Maintenance task 12","duration":5,"release_time":10,"deadline":42,"priority":3,"value":50,"required_skill":"inspection","required_machine_type":null,"predecessor_ids":[],"mandatory":true},
+    {"id":"T13","name":"Maintenance task 13","duration":3,"release_time":11,"deadline":40,"priority":5,"value":85,"required_skill":"electrical","required_machine_type":"lift","predecessor_ids":["T12"],"mandatory":true},
+    {"id":"T14","name":"Maintenance task 14","duration":7,"release_time":12,"deadline":45,"priority":1,"value":25,"required_skill":"mechanical","required_machine_type":"diagnostic","predecessor_ids":[],"mandatory":false},
+    {"id":"T15","name":"Maintenance task 15","duration":4,"release_time":13,"deadline":46,"priority":4,"value":65,"required_skill":"inspection","required_machine_type":null,"predecessor_ids":[],"mandatory":true},
+    {"id":"T16","name":"Maintenance task 16","duration":5,"release_time":14,"deadline":48,"priority":3,"value":55,"required_skill":"electrical","required_machine_type":"diagnostic","predecessor_ids":[],"mandatory":true},
+    {"id":"T17","name":"Maintenance task 17","duration":6,"release_time":15,"deadline":52,"priority":2,"value":45,"required_skill":"mechanical","required_machine_type":"lift","predecessor_ids":["T16"],"mandatory":true},
+    {"id":"T18","name":"Maintenance task 18","duration":3,"release_time":16,"deadline":50,"priority":5,"value":95,"required_skill":"inspection","required_machine_type":null,"predecessor_ids":[],"mandatory":true},
+    {"id":"T19","name":"Maintenance task 19","duration":5,"release_time":17,"deadline":55,"priority":3,"value":60,"required_skill":"electrical","required_machine_type":"lift","predecessor_ids":[],"mandatory":true},
+    {"id":"T20","name":"Maintenance task 20","duration":4,"release_time":18,"deadline":56,"priority":4,"value":75,"required_skill":"mechanical","required_machine_type":"diagnostic","predecessor_ids":["T19"],"mandatory":true},
+    {"id":"T21","name":"Maintenance task 21","duration":7,"release_time":19,"deadline":60,"priority":1,"value":20,"required_skill":"inspection","required_machine_type":null,"predecessor_ids":[],"mandatory":false},
+    {"id":"T22","name":"Maintenance task 22","duration":4,"release_time":20,"deadline":58,"priority":5,"value":88,"required_skill":"electrical","required_machine_type":"diagnostic","predecessor_ids":[],"mandatory":true},
+    {"id":"T23","name":"Maintenance task 23","duration":3,"release_time":21,"deadline":61,"priority":2,"value":35,"required_skill":"mechanical","required_machine_type":"lift","predecessor_ids":[],"mandatory":true},
+    {"id":"T24","name":"Maintenance task 24","duration":6,"release_time":22,"deadline":65,"priority":3,"value":50,"required_skill":"inspection","required_machine_type":null,"predecessor_ids":["T23"],"mandatory":true},
+    {"id":"T25","name":"Maintenance task 25","duration":5,"release_time":23,"deadline":68,"priority":4,"value":72,"required_skill":"electrical","required_machine_type":"lift","predecessor_ids":[],"mandatory":true}
+  ],
+  "workers": [
+    {"id":"W1","name":"Technician 1","skills":["electrical","mechanical"],"available_intervals":[{"start":0,"end":80},{"start":88,"end":160}]},
+    {"id":"W2","name":"Technician 2","skills":["mechanical","inspection"],"available_intervals":[{"start":0,"end":160}]},
+    {"id":"W3","name":"Technician 3","skills":["inspection","electrical"],"available_intervals":[{"start":0,"end":160}]},
+    {"id":"W4","name":"Technician 4","skills":["electrical","inspection"],"available_intervals":[{"start":8,"end":160}]},
+    {"id":"W5","name":"Technician 5","skills":["mechanical","electrical"],"available_intervals":[{"start":0,"end":160}]},
+    {"id":"W6","name":"Technician 6","skills":["inspection","mechanical"],"available_intervals":[{"start":0,"end":72},{"start":76,"end":160}]}
+  ],
+  "machines": [
+    {"id":"M1","name":"Lift 1","machine_type":"lift","available_intervals":[{"start":0,"end":160}]},
+    {"id":"M2","name":"Diagnostic 1","machine_type":"diagnostic","available_intervals":[{"start":0,"end":160}]},
+    {"id":"M3","name":"Lift 2","machine_type":"lift","available_intervals":[{"start":6,"end":160}]},
+    {"id":"M4","name":"Diagnostic 2","machine_type":"diagnostic","available_intervals":[{"start":0,"end":70},{"start":75,"end":160}]}
+  ]
+}

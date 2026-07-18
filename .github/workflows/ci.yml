@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -e '.[dev]'
+      - run: ruff check .
+      - run: mypy src
+      - run: pytest
+      - run: python scripts/smoke.py
+      - run: python benchmarks/benchmark.py --max-size 25 --time-limit 1
+      - run: docker build -t resilient-ops:test .

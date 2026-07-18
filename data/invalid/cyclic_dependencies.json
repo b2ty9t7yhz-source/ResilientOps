@@ -1,0 +1,10 @@
+{
+  "name": "Invalid cyclic scenario",
+  "horizon": 24,
+  "tasks": [
+    {"id":"T2","name":"Task two","duration":2,"release_time":0,"deadline":10,"priority":1,"value":10,"required_skill":"electrical","required_machine_type":null,"predecessor_ids":["T5"],"mandatory":true},
+    {"id":"T5","name":"Task five","duration":2,"release_time":0,"deadline":12,"priority":1,"value":10,"required_skill":"electrical","required_machine_type":null,"predecessor_ids":["T2"],"mandatory":true}
+  ],
+  "workers": [{"id":"W1","name":"Worker","skills":["electrical"],"available_intervals":[{"start":0,"end":24}]}],
+  "machines": []
+}

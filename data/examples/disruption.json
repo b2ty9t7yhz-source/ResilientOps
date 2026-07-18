@@ -1,0 +1,29 @@
+{
+  "scenario": {
+    "name": "Disruption repair demonstration",
+    "horizon": 72,
+    "tasks": [
+      {"id":"T1","name":"Initial inspection","duration":3,"release_time":0,"deadline":8,"priority":4,"value":45,"required_skill":"inspection","required_machine_type":null,"predecessor_ids":[],"mandatory":true},
+      {"id":"T2","name":"Panel diagnosis","duration":4,"release_time":0,"deadline":12,"priority":5,"value":80,"required_skill":"electrical","required_machine_type":"diagnostic","predecessor_ids":[],"mandatory":true},
+      {"id":"T3","name":"Belt replacement","duration":5,"release_time":4,"deadline":22,"priority":3,"value":55,"required_skill":"mechanical","required_machine_type":"lift","predecessor_ids":["T1"],"mandatory":true},
+      {"id":"T4","name":"Wiring repair","duration":5,"release_time":5,"deadline":24,"priority":4,"value":70,"required_skill":"electrical","required_machine_type":"lift","predecessor_ids":["T2"],"mandatory":true},
+      {"id":"T5","name":"Sensor calibration","duration":3,"release_time":8,"deadline":28,"priority":2,"value":30,"required_skill":"inspection","required_machine_type":"diagnostic","predecessor_ids":["T2"],"mandatory":false},
+      {"id":"T6","name":"Final verification","duration":3,"release_time":10,"deadline":34,"priority":5,"value":90,"required_skill":"inspection","required_machine_type":null,"predecessor_ids":["T3","T4"],"mandatory":true},
+      {"id":"T7","name":"Pump service","duration":6,"release_time":12,"deadline":36,"priority":2,"value":40,"required_skill":"mechanical","required_machine_type":"diagnostic","predecessor_ids":[],"mandatory":true},
+      {"id":"T8","name":"Optional upgrade","duration":6,"release_time":14,"deadline":38,"priority":1,"value":25,"required_skill":"electrical","required_machine_type":"lift","predecessor_ids":[],"mandatory":false}
+    ],
+    "workers": [
+      {"id":"W1","name":"Alex","skills":["electrical","mechanical"],"available_intervals":[{"start":0,"end":72}]},
+      {"id":"W2","name":"Blair","skills":["mechanical","inspection"],"available_intervals":[{"start":0,"end":72}]},
+      {"id":"W3","name":"Casey","skills":["electrical","inspection"],"available_intervals":[{"start":0,"end":72}]}
+    ],
+    "machines": [
+      {"id":"M1","name":"Mobile Lift","machine_type":"lift","available_intervals":[{"start":0,"end":72}]},
+      {"id":"M2","name":"Diagnostic Cart","machine_type":"diagnostic","available_intervals":[{"start":0,"end":72}]}
+    ]
+  },
+  "events": [
+    {"event_type":"machine_breakdown","event_time":10,"machine_id":"M1","recovery_time":24},
+    {"event_type":"urgent_task_arrival","event_time":10,"task":{"id":"URGENT-1","name":"Emergency compressor repair","duration":4,"release_time":10,"deadline":17,"priority":10,"value":200,"required_skill":"electrical","required_machine_type":"diagnostic","predecessor_ids":[],"mandatory":true}}
+  ]
+}

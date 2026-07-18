@@ -1,5 +1,11 @@
 # ResilientOps
 
+[![CI](https://github.com/b2ty9t7yhz-source/ResilientOps/actions/workflows/ci.yml/badge.svg)](https://github.com/b2ty9t7yhz-source/ResilientOps/actions/workflows/ci.yml)
+![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
+![OR-Tools](https://img.shields.io/badge/OR--Tools-CP--SAT-4285F4)
+![FastAPI](https://img.shields.io/badge/FastAPI-API-009688?logo=fastapi&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?logo=streamlit&logoColor=white)
+
 ResilientOps is a smart scheduling system that assigns tasks to limited workers and machines. When an urgent task arrives, a worker becomes unavailable, or a machine breaks down, the system automatically repairs the remaining schedule.
 
 It is a complete Python portfolio project: typed JSON inputs, three greedy baselines, a Google OR-Tools CP-SAT optimizer, disruption-aware re-optimization, shared metrics, Plotly charts, a Streamlit dashboard, a FastAPI service, a CLI, tests, Docker, and CI.
